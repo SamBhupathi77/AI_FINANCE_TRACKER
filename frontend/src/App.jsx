@@ -515,7 +515,6 @@ function Dashboard() {
 
       <main style={{ maxWidth: '1200px', margin: '20px auto 0 auto', padding: '0 5%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
         
-        {/* LEFT COLUMN */}
         <div>
           <div style={cardStyle}>
             <h3 style={{ marginTop: 0, marginBottom: '20px', fontSize: '1.2rem', fontWeight: '700' }}>Monthly Budget Goal</h3>
@@ -556,10 +555,7 @@ function Dashboard() {
                   <option value="income">Income</option>
                 </select>
               </div>
-              
-              {/* THE CATEGORY DROPDOWN HAS BEEN COMPLETELY REMOVED */}
 
-              {/* Description is now REQUIRED so the AI has context */}
               <input 
                   type="text" 
                   placeholder="What was this for? (e.g. KFC, Gas Station)" 
@@ -573,7 +569,6 @@ function Dashboard() {
               
               <div style={{ display: 'flex', gap: '10px' }}>
                 <button type="submit" disabled={isSaving} style={{ ...buttonStyle, flex: 1 }}>
-                  {/* Dynamic button text so user knows AI is working */}
                   {isSaving ? '✨ Auto-Categorizing & Saving...' : (editingId ? 'Update Transaction' : 'Save Transaction')}
                 </button>
                 {editingId && (
@@ -620,7 +615,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN */}
         <div>
           <div style={cardStyle}>
             <h3 style={{ marginTop: 0, marginBottom: '20px', fontSize: '1.2rem', fontWeight: '700' }}>Expense Breakdown</h3>
