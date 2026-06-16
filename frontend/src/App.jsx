@@ -12,7 +12,7 @@ function Auth() {
 
   const handleSubmit = async (e) => {
     e.preventDefault() 
-    const endpoint = isSignup ? 'http://localhost:8000/signup' : 'http://localhost:8000/login'
+    const endpoint = isSignup ? 'https://ai-finance-tracker-backend-pfwf.onrender.com/signup' : 'https://ai-finance-tracker-backend-pfwf.onrender.com/login'
 
     try {
       let response;
@@ -256,7 +256,7 @@ function Dashboard() {
     const token = localStorage.getItem('token')
     if (!token) return
     try {
-      const response = await fetch('http://localhost:8000/users/me', { headers: { 'Authorization': `Bearer ${token}` } })
+      const response = await fetch('https://ai-finance-tracker-backend-pfwf.onrender.com/users/me', { headers: { 'Authorization': `Bearer ${token}` } })
       if (response.ok) {
         const data = await response.json()
         setUserName(data.name.split(' ')[0])
@@ -268,7 +268,7 @@ function Dashboard() {
     const token = localStorage.getItem('token')
     if (!token) return navigate('/')
     try {
-      const response = await fetch('http://localhost:8000/transactions', { headers: { 'Authorization': `Bearer ${token}` } })
+      const response = await fetch('https://ai-finance-tracker-backend-pfwf.onrender.com/transactions', { headers: { 'Authorization': `Bearer ${token}` } })
       if (response.ok) {
         const data = await response.json()
         setTransactions(data)
@@ -282,7 +282,7 @@ function Dashboard() {
     const token = localStorage.getItem('token')
     
     try {
-        const aiResponse = await fetch('http://localhost:8000/ai/suggest-category', {
+        const aiResponse = await fetch('https://ai-finance-tracker-backend-pfwf.onrender.com/ai/suggest-category', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ description, type })
@@ -299,7 +299,7 @@ function Dashboard() {
       }
       
       // STEP 3: Save to the database
-      const endpoint = editingId ? `http://localhost:8000/transactions/${editingId}` : 'http://localhost:8000/transactions'
+      const endpoint = editingId ? `https://ai-finance-tracker-backend-pfwf.onrender.com/transactions/${editingId}` : 'https://ai-finance-tracker-backend-pfwf.onrender.com/transactions'
       const method = editingId ? 'PUT' : 'POST'
 
       const response = await fetch(endpoint, {
@@ -327,7 +327,7 @@ function Dashboard() {
     
     const token = localStorage.getItem('token')
     try {
-      const response = await fetch(`http://localhost:8000/transactions/${id}`, {
+      const response = await fetch(`https://ai-finance-tracker-backend-pfwf.onrender.com/transactions/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       })
@@ -373,7 +373,7 @@ function Dashboard() {
     setIsSummaryLoading(true)
     const token = localStorage.getItem('token')
     try {
-      const response = await fetch('http://localhost:8000/ai/summary', { headers: { 'Authorization': `Bearer ${token}` }})
+      const response = await fetch('https://ai-finance-tracker-backend-pfwf.onrender.com/ai/summary', { headers: { 'Authorization': `Bearer ${token}` }})
       if (response.ok) {
         const data = await response.json()
         setAiSummary(data.summary)
@@ -387,7 +387,7 @@ function Dashboard() {
     setIsChatLoading(true)
     const token = localStorage.getItem('token')
     try {
-      const response = await fetch('http://localhost:8000/ai/chat', {
+      const response = await fetch('https://ai-finance-tracker-backend-pfwf.onrender.com/ai/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
         body: JSON.stringify({ question: chatQuestion })
