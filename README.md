@@ -1,4 +1,4 @@
-# 💰 AI Finance Tracker
+#  AI Finance Tracker
 
 [![Python](https://img.shields.io/badge/Python-3.13%2B-blue)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.137.1-009688)](https://fastapi.tiangolo.com/)
