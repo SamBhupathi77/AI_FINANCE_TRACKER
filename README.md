@@ -113,7 +113,6 @@ AI_FINANCE_TRACKER/
 │   ├── 📄 ai_utils.py              # AI integration functions
 │   ├── 📄 requirements.txt         # Python dependencies
 │   ├── 📄 .env                     # Environment variables (git-ignored)
-│   └── 📄 .env.example             # Example environment file
 │
 ├── 📁 frontend/                    # React + Vite Frontend
 │   ├── src/
